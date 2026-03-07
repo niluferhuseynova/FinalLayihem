@@ -7,10 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Views\About\" />
-    <Folder Include="Views\Menu\" />
-    <Folder Include="Views\Book\" />
+    <Folder Include="wwwroot\admin\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.23" />
   </ItemGroup>
 
 </Project>
