@@ -2,8 +2,9 @@
 {
     public class DiscountedProductUpdateVM
     {
-        public string ImageUrl { get; set; }
-        public string ImageNameName { get; set; }
+        public int Id { get; set; }
+        public IFromFile? Image { get; set; }
+        public string ImageName { get; set; }
         public string Name { get; set; }
         public double Percentage { get; set; }
     }

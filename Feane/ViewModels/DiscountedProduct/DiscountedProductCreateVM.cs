@@ -1,9 +1,9 @@
 ﻿namespace Feane.ViewModels.DiscountedProduct
 {
     public class DiscountedProductCreateVM
-    {
-        public string ImageUrl { get; set; } 
-        public string ImageNameName { get; set; } 
+    {   
+        public int Id {  get; set; }
+        public IFromFile? Image { get; set; }
         public string Name { get; set; } 
         public double Percentage { get; set; }
 

@@ -1,8 +1,8 @@
 ﻿namespace Feane.ViewModels.Dish.Product
 {
-    public class DishProductGetVM
+    public class DishGetVM
     {
-        public string ImageUrl { get; set; }
+       
         public string ImageName { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
