@@ -2,11 +2,10 @@
 
 namespace Feane.ViewModels.Customers
 {
-    public class CustomersCreateVM
+    public class CustomersUpdateVM
     {
-        [Required]
-        
-        public IFormFile ImageName { get; set; }
+         public int Id { get; set; }
+        public IFormFile? ImageName { get; set; }
         [Required]
         [MaxLength(50)]
         [MinLength(10)]

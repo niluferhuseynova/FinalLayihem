@@ -2,9 +2,9 @@
 {
     public class DiscountedProductGetVM
     {
-       
-        public string ImageName { get; set; }
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public string ImageName { get; set; } = string.Empty;   
+        public string Name { get; set; } = string.Empty;
         public double Percentage { get; set; }
     }
 }

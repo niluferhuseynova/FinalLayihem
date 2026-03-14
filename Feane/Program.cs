@@ -1,3 +1,6 @@
+using Feane.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace Feane
 {
     public class Program
@@ -8,6 +11,10 @@ namespace Feane
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
+            });
 
             var app = builder.Build();
             app.MapControllerRoute(

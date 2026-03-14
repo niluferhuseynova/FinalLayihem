@@ -1,10 +1,17 @@
-﻿namespace Feane.ViewModels.DiscountedProduct
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Feane.ViewModels.DiscountedProduct
 {
     public class DiscountedProductCreateVM
-    {   
-        public int Id {  get; set; }
-        public IFromFile? Image { get; set; }
-        public string Name { get; set; } 
+    {
+        [Required]
+        public IFormFile Image { get; set; }
+        [Required]
+        [MaxLength(50)]
+        [MinLength(10)]
+        public string Name { get; set; } = string.Empty;
+        [Required]
+        
         public double Percentage { get; set; }
 
     }
