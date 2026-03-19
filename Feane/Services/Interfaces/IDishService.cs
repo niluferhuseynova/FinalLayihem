@@ -1,10 +1,15 @@
-﻿using Feane.Services.Implementations;
-using Feane.ViewModels.Dish.Product;
+﻿using Feane.ViewModels.Dish.Product;
 
 namespace Feane.Services.Interfaces
 {
-    public class IDishService 
-    {
-        Task<List<DishGetVM>> GettAll { get;>> }
-      
+    public interface IDishService
+    { 
+        Task<List<DishGetVM>>GetAllAsync();
+        Task GetByIdAsync(int id);
+        Task CreateAsync(DishCreateVM vm);
+        Task Update(DishUpdateVM vm);
+        Task Update(int id);
+        Task DeleteAsync(int id);
+       
+    }
 }
