@@ -2,7 +2,7 @@
 
 namespace Feane.ViewModels.DiscountedProduct
 {
-    public class DiscountedProductUpdateVM
+    public class IAppaeareanceService
     {
         public int Id { get; set; }
         public IFormFile? Image { get; set; }

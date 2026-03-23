@@ -25,12 +25,17 @@ namespace Feane.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public Task Update(DiscountedProductUpdateVM vm)
+        public Task Update(IAppaeareanceService vm)
         {
             throw new NotImplementedException();
         }
 
         public Task Update(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Update(DiscountedProductUpdateVM vm)
         {
             throw new NotImplementedException();
         }

@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\dishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\dishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\appaereanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\appaereanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\interfaces\\idishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\interfaces\\idishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\interfaces\\idiscountedproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\interfaces\\idiscountedproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\interfaces\\isliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\interfaces\\isliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\discountedproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\discountedproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\interfaces\\idiscountedproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\interfaces\\idiscountedproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\interfaces\\idishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\interfaces\\idishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\dishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\dishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\migrations\\20260314171932_mig1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,63 +70,99 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppaereanceService.cs",
+              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\AppaereanceService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\AppaereanceService.cs",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\AppaereanceService.cs*",
+              "RelativeToolTip": "Services\\Implementations\\AppaereanceService.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T16:42:33.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ISliderService.cs",
+              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Interfaces\\ISliderService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ISliderService.cs",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Interfaces\\ISliderService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ISliderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T16:24:58.148Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "SliderService.cs",
+              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\SliderService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\SliderService.cs",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\SliderService.cs",
+              "RelativeToolTip": "Services\\Implementations\\SliderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T16:24:27.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "DiscountedProductService.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DiscountedProductService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\DiscountedProductService.cs",
-              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DiscountedProductService.cs*",
-              "RelativeToolTip": "Services\\Implementations\\DiscountedProductService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DiscountedProductService.cs",
+              "RelativeToolTip": "Services\\Implementations\\DiscountedProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-19T16:00:20.904Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "DishService.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DishService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\DishService.cs",
-              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DishService.cs*",
-              "RelativeToolTip": "Services\\Implementations\\DishService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAvAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DishService.cs",
+              "RelativeToolTip": "Services\\Implementations\\DishService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T21:20:16.033Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-18T21:20:16.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IDishService.cs",
+              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Interfaces\\IDishService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IDishService.cs",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Interfaces\\IDishService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IDishService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T21:19:16.691Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IDishService.cs",
-              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Interfaces\\IDishService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IDishService.cs",
-              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Interfaces\\IDishService.cs*",
-              "RelativeToolTip": "Services\\Interfaces\\IDishService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T21:19:16.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "IDiscountedProductService.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Interfaces\\IDiscountedProductService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IDiscountedProductService.cs",
               "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Interfaces\\IDiscountedProductService.cs",
               "RelativeToolTip": "Services\\Interfaces\\IDiscountedProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-18T21:00:12.794Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "20260314171932_mig1.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Migrations\\20260314171932_mig1.cs",
               "RelativeDocumentMoniker": "Migrations\\20260314171932_mig1.cs",
@@ -126,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "AppaereanceCreateVM.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\ViewModels\\Appaeareance.cs\\AppaereanceCreateVM.cs",
               "RelativeDocumentMoniker": "ViewModels\\Appaeareance.cs\\AppaereanceCreateVM.cs",
@@ -138,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "AppaeareanceUpdateVM.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\ViewModels\\Appaeareance.cs\\AppaeareanceUpdateVM.cs",
               "RelativeDocumentMoniker": "ViewModels\\Appaeareance.cs\\AppaeareanceUpdateVM.cs",
@@ -150,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "AppaeareanceGetVM.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\ViewModels\\Appaeareance.cs\\AppaeareanceGetVM.cs",
               "RelativeDocumentMoniker": "ViewModels\\Appaeareance.cs\\AppaeareanceGetVM.cs",
@@ -162,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Appeareance.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Models\\Appeareance.cs",
               "RelativeDocumentMoniker": "Models\\Appeareance.cs",
@@ -174,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Context\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Context\\AppDbContext.cs",
@@ -186,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -198,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
