@@ -1,5 +1,6 @@
 ﻿using Feane.Services.Interfaces;
 using Feane.ViewModels.SliderProduct;
+using Microsoft.EntityFrameworkCore;
 
 namespace Feane.Services.Implementations
 {
@@ -10,9 +11,14 @@ namespace Feane.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var SilderService = await _context.SilderService.FindAsync(id);
+            if (SilderService == null) return; 
+            _context.SilderService.Remove(SilderService);
+            await _context.SaveChangesAsync();
+        }
+            
         }
 
         public Task<List<SliderGetVM>> GetAllAsync()

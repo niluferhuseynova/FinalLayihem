@@ -1,18 +1,43 @@
-﻿using Feane.Services.Interfaces;
+﻿using Feane.Context;
+using Feane.Helper;
+using Feane.Models;
+using Feane.Services.Interfaces;
 using Feane.ViewModels.DiscountedProduct;
 
 namespace Feane.Services.Implementations
 {
     public class DiscountedProductService : IDiscountedProductService
     {
-        public Task CreateAsync(DiscountedProductCreateVM vm)
+        private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _env;
+        private readonly string _FolderPath;
+
+        public DiscountedProductService(AppDbContext context, IWebHostEnvironment env)
         {
-            throw new NotImplementedException();
+            _context = context;
+            _env = env;
+            _FolderPath = Path.Combine(_env.WebRootPath, "images");
         }
 
-        public Task DeleteAsync(int id)
+        public async Task CreateAsync(DiscountedProductCreateVM vm)
         {
-            throw new NotImplementedException();
+            string uniqueFileName = await vm.Image.FileUploadAsync(_FolderPath);
+            DiscountedProduct discountedProduct = new()
+            {
+              Name = vm.Name,
+              Percentage = vm.Percentage,
+              ImageName = uniqueFileName 
+            };
+            await _context.DiscountedProducts.AddAsync(discountedProduct);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var discountedproduct=  await _context.DiscountedProducts.FindAsync(id);
+            if (discountedproduct == null) return;
+            _context.DiscountedProducts.Remove(discountedproduct);
+            await _context.SaveChangesAsync();
         }
 
         public Task<List<DiscountedProductGetVM>> GetAllAsync()
@@ -25,7 +50,7 @@ namespace Feane.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public Task Update(IAppaeareanceService vm)
+        public Task Update(DiscountedProductUpdateVM vm)
         {
             throw new NotImplementedException();
         }
@@ -35,9 +60,6 @@ namespace Feane.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public Task Update(DiscountedProductUpdateVM vm)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

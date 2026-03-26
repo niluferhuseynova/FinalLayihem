@@ -1,7 +1,8 @@
 ﻿namespace Feane.Helper
 {
     public static class ExtensionMethod
-    {   public static  async  Task<string> FileUplodaAsync(this IFormFile file, string folderPath)
+    {  
+        public static  async  Task<string> FileUploadAsync(this IFormFile file, string folderPath)
         {
             string uniqueFileName = Guid.NewGuid().ToString() + file.FileName;
             string path = Path.Combine(folderPath, uniqueFileName);
@@ -9,18 +10,19 @@
             await file.CopyToAsync(stream);
             return uniqueFileName;
         }
+        public static bool CheckType(this IFormFile file, string type)
+        {
+            return file.ContentType.Contains(type);
+        }
+        public static bool CheckSize(this IFormFile file, int mb)
+        {
+            return file.Length < mb * 1024 * 1024;
+        }
+        public static void DeleteFile(string file)
+        {
+            if (File.Exists(file))
+                File.Delete(file);
+        }
+
     }
-}
-public static bool CheckType(this  IFormFile file, string type)
-{
-    return file.ContentType.Contains(type);
-}
-public static bool CheckSize(this IFormFile file, int mb)
-{
-    return file.Length <mb * 1024 * 1024;
-}
-public static void DeleteFile(string file)
-{
-    if (File.Exists(file))
-        File.Delete(file);
 }

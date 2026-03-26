@@ -2,7 +2,7 @@
 
 namespace Feane.Services.Interfaces
 {
-    public interface IAppaeareanceService
+    public interface IAppearanceService
     {
         Task<List<AppaeareanceGetVM>> GetAllAsync();
         Task GetByIdAsync (int id);

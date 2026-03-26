@@ -1,18 +1,23 @@
 ﻿using Feane.Services.Interfaces;
 using Feane.ViewModels.BookTable;
+using Microsoft.EntityFrameworkCore;
 
 namespace Feane.Services.Implementations
 {
     public class BookTableService : IBookTableService
     {
+        {
         public Task CreateAsync(BookTableCreateVM vm)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var BookTableService = await _context.BookTableService.FindAsync(id);
+            if (BookTableService == null) return;
+            _context.BookTableServices.Remove(BookTableService);
+            await _context.SaveChangesAsync();
         }
 
         public Task<List<BookTableGetVM>> GetAllAsync()

@@ -1,38 +1,38 @@
 ﻿using Feane.Context;
 using Feane.Services.Interfaces;
-using Feane.ViewModels.Dish.Product;
+using Feane.ViewModels.Customers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Feane.Services.Implementations
 {
-    public class DishService : IDishService
+    public class CustomerService : ICustomersService
     {
         private readonly AppDbContext context;
         private readonly IWebHostEnvironment _env;
         private readonly string _FolderPath;
 
-        public DishService(AppDbContext context, IWebHostEnvironment env)
+        public CustomerService(AppDbContext context, IWebHostEnvironment env = null)
         {
             this.context = context;
             _env = env;
-            FolderPath = Path.Combine(_env.WebRootPath, "images");
+            _FolderPath = Path.Combine(_env.WebRootPath, "images");
         }
 
-        public Task CreateAsync(DishCreateVM vm)
+        public Task CreateAsync(CustomersCreateVM vm)
         {
             throw new NotImplementedException();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var DishService = await _context.DishServiceFindAsync(id);
-            var DishService = await _context.DishService.FindAsync(id);
-            if ( == null) return;
-            _context.DishService.Remove(DishService);
+            var CustomersService = await _context.CustomersService.FindAsync(id);
+            if (CustomersService == null) return;
+            _context.CustomersService.Remove(customersService);
             await _context.SaveChangesAsync();
+
         }
 
-        public Task<List<DishGetVM>> GetAllAsync()
+        public Task<List<CustomersGetVM>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
@@ -42,7 +42,7 @@ namespace Feane.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public Task Update(DishUpdateVM vm)
+        public Task Update(CustomersUpdateVM vm)
         {
             throw new NotImplementedException();
         }
