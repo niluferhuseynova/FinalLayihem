@@ -3,6 +3,7 @@ using Feane.Helper;
 using Feane.Models;
 using Feane.Services.Interfaces;
 using Feane.ViewModels.DiscountedProduct;
+using Microsoft.EntityFrameworkCore;
 
 namespace Feane.Services.Implementations
 {
@@ -40,14 +41,21 @@ namespace Feane.Services.Implementations
             await _context.SaveChangesAsync();
         }
 
-        public Task<List<DiscountedProductGetVM>> GetAllAsync()
+        public async Task<List<DiscountedProductGetVM>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.DiscountedProducts.Select(p => new DiscountedProductGetVM ()
+            {
+                Id = p.Id,
+                Name = p.Name,
+                ImageName= p.ImageName,
+                Percentage = p.Percentage
+            }).ToListAsync();
         }
 
-        public Task GetByIdAsync(int id)
+        public async Task GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            await _context.DiscountedProducts.FindAsync(id);
+            return;
         }
 
         public Task Update(DiscountedProductUpdateVM vm)

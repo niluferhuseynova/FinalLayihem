@@ -1,4 +1,6 @@
 ﻿using Feane.Context;
+using Feane.Helper;
+using Feane.Models;
 using Feane.Services.Interfaces;
 using Feane.ViewModels.Customers;
 using Microsoft.EntityFrameworkCore;
@@ -7,39 +9,54 @@ namespace Feane.Services.Implementations
 {
     public class CustomerService : ICustomersService
     {
-        private readonly AppDbContext context;
+        private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
         private readonly string _FolderPath;
 
-        public CustomerService(AppDbContext context, IWebHostEnvironment env = null)
+        public CustomerService(AppDbContext context, IWebHostEnvironment env)
         {
-            this.context = context;
+            _context = context;
             _env = env;
             _FolderPath = Path.Combine(_env.WebRootPath, "images");
         }
 
-        public Task CreateAsync(CustomersCreateVM vm)
+        Task ICustomersService.CreateAsync(CustomersCreateVM vm)
         {
-            throw new NotImplementedException();
-        }
+            string uniqueFileName = await vm.ImageName.FileUploadAsync(_folderPath);
+            Customers customers = new()
+            {
+                Comment = vm.Comment,
+                ImageName = uniqueFileName,
+                ImageUrl = uniqueFileName,
+                Name = uniqueFileName
+            };
+            await _context.Customers.AddAsync(customers);
+            await _context.SaveChangesAsync();
 
         public async Task DeleteAsync(int id)
         {
-            var CustomersService = await _context.CustomersService.FindAsync(id);
-            if (CustomersService == null) return;
-            _context.CustomersService.Remove(customersService);
+            var customers = await _context.Customers.FindAsync(id);
+            if (customers == null) return;
+            _context.Customers.Remove(customers);
             await _context.SaveChangesAsync();
 
         }
 
-        public Task<List<CustomersGetVM>> GetAllAsync()
+        public async Task<List<CustomersGetVM>> GetAllAsync()
         {
-            throw new NotImplementedException();
+           return await _context.Customers.Select( p=> new CustomersGetVM()
+           {
+               Name = p.Name,
+               ImageName= p.ImageName,
+               Comment = p.Comment,
+               Id = p.Id
+           }).ToListAsync();
         }
 
-        public Task GetByIdAsync(int id)
+        public async Task GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            await _context.Customers.FindAsync( id );
+            return;
         }
 
         public Task Update(CustomersUpdateVM vm)

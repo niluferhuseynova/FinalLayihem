@@ -1,4 +1,5 @@
 ﻿using Feane.Context;
+using Feane.Models;
 using Feane.Services.Interfaces;
 using Feane.ViewModels.Dish.Product;
 using Microsoft.EntityFrameworkCore;
@@ -7,39 +8,53 @@ namespace Feane.Services.Implementations
 {
     public class DishService : IDishService
     {
-        private readonly AppDbContext context;
+        private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
         private readonly string _FolderPath;
 
         public DishService(AppDbContext context, IWebHostEnvironment env)
         {
-            this.context = context;
+            _context = context;
             _env = env;
-            FolderPath = Path.Combine(_env.WebRootPath, "images");
+            _FolderPath = Path.Combine(_env.WebRootPath, "images");
         }
 
-        public Task CreateAsync(DishCreateVM vm)
+         public async Task CreateAsync(DishCreateVM vm)
         {
-            throw new NotImplementedException();
+            string uniqueFileName = await vm.DishPrice.FileUploadAsync(_folderPath);
+             Dish dish = new()
+            {
+                ImageName = uniqueFileName,
+                Name = vm.Name,
+                DishPrice = vm.DishPrice,
+                
+            };
+            await _context.Dishes.AddAsync(dish);
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var DishService = await _context.DishServiceFindAsync(id);
-            var DishService = await _context.DishService.FindAsync(id);
-            if ( == null) return;
-            _context.DishService.Remove(DishService);
+            var dish = await _context.Dishes.FindAsync(id);
+            if ( dish == null) return;
+            _context.Dishes.Remove(dish);
             await _context.SaveChangesAsync();
         }
 
-        public Task<List<DishGetVM>> GetAllAsync()
+        public async Task<List<DishGetVM>> GetAllAsync()
         {
-            throw new NotImplementedException();
+           return await _context.Dishes.Select(dish => new DishGetVM()
+           {
+              Id = dish.Id,
+              Name = dish.Name,
+              ImageName = dish.ImageName
+           }).ToListAsync();
         }
 
-        public Task GetByIdAsync(int id)
+        public async Task GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            await _context.Dishes.FindAsync(id);
+            return;
         }
 
         public Task Update(DishUpdateVM vm)

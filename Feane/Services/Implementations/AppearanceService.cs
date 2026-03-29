@@ -1,6 +1,8 @@
 ﻿
 
 using Feane.Context;
+using Feane.Helper;
+using Feane.Models;
 using Feane.Services.Interfaces;
 using Feane.ViewModels.Appaeareance.cs;
 using Microsoft.EntityFrameworkCore;
@@ -10,45 +12,52 @@ namespace Feane.Services.Implementations
     public class AppearanceService : IAppearanceService
         
     {
-        private readonly AppDbContext _Context;
+        private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
-        private readonly string _FolderPath;
-        public AppearanceService(IServiceProvider serviceProvider, AppDbContext context);
+        private readonly string _folderPath;
        
         public AppearanceService(AppDbContext context, IWebHostEnvironment env, string folderPath)
         {
-            _Context = context;
+            _context = context;
             _env = env;
-            _FolderPath = folderPath;
+            _folderPath = Path.Combine(_env.WebRootPath, "images");
         }
 
-        public Task CreateAsync(AppaereanceCreateVM vm)
+        public async Task CreateAsync(AppaereanceCreateVM vm)
 
         {
-            throw new NotImplementedException();
+            string uniqueFileName = await vm.ImageName.FileUploadAsync(_folderPath);
+            Appeareance appeareance = new()
+            {
+                Title = vm.Title,
+                ImageName = uniqueFileName,
+                Description = vm.Description
+            };
+            await _context.Appeareances.AddAsync(appeareance);
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var AppearanceService = await GetAppearanceService().FindAsync(id);
-            if (AppearanceService == null) return;
-            _Context.AppearanceService.Remove(AppearanceService);
-            await _Context.SaveChangesAsync();
+            var appearance = await _context.Appeareances.FindAsync(id);
+            if (appearance== null) return;
+            _context.Appeareances.Remove(appearance);
+            await _context.SaveChangesAsync();
+        }
+        public async Task<List<AppaeareanceGetVM>> GetAllAsync()
+        {
+            return await _context.Appeareances.Select(p => new AppaeareanceGetVM ()
+            {
+                Title = p.Title,
+                Description = p.Description,
+                Id = p.Id
+            }).ToListAsync();
         }
 
-        private static object GetAppearanceService()
+        public async Task GetByIdAsync(int id)
         {
-            return _Context.AppearanceService;
-        }
-
-        public Task<List<AppaeareanceGetVM>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
+            await _context.Appeareances.FindAsync (id);
+            return;
         }
 
         public Task Update(AppaeareanceUpdateVM vm)

@@ -1,4 +1,5 @@
-﻿using Feane.Services.Interfaces;
+﻿using Feane.Context;
+using Feane.Services.Interfaces;
 using Feane.ViewModels.BookTable;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,7 +7,13 @@ namespace Feane.Services.Implementations
 {
     public class BookTableService : IBookTableService
     {
+        private readonly AppDbContext _context;
+
+        public BookTableService(AppDbContext context)
         {
+            _context = context;
+        }
+
         public Task CreateAsync(BookTableCreateVM vm)
         {
             throw new NotImplementedException();
@@ -14,20 +21,29 @@ namespace Feane.Services.Implementations
 
         public async Task DeleteAsync(int id)
         {
-            var BookTableService = await _context.BookTableService.FindAsync(id);
-            if (BookTableService == null) return;
-            _context.BookTableServices.Remove(BookTableService);
+            var BookTable = await _context.BookTables.FindAsync(id);
+            if (BookTable == null) return;
+            _context.BookTables.Remove(BookTable);
             await _context.SaveChangesAsync();
         }
 
-        public Task<List<BookTableGetVM>> GetAllAsync()
+        public async Task<List<BookTableGetVM>> GetAllAsync()
         {
-            throw new NotImplementedException();
+           return await _context.BookTables.Select(p => new BookTableGetVM ()
+           {
+               Id = p.Id,
+               Name = p.Name,
+               Email = p.Email,
+               Date = DateTime.Now,
+               PersonNumber = p.PersonNumber,
+               PhoneNumber = p.PhoneNumber
+           }).ToListAsync();
         }
 
-        public Task GetByIdAsync(int id)
+        public async Task GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            await _context.BookTables.FindAsync(id);
+            return;
         }
 
         public Task Update(BookTableUpdateVM vm)

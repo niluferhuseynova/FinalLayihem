@@ -1,4 +1,6 @@
-﻿using Feane.Services.Interfaces;
+﻿using Feane.Context;
+using Feane.Models;
+using Feane.Services.Interfaces;
 using Feane.ViewModels.SliderProduct;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,29 +8,45 @@ namespace Feane.Services.Implementations
 {
     public class SliderService : ISliderService
     {
-        public Task CreateAsync(SliderCeateVM vm)
+        private readonly AppDbContext _context;
+
+        public SliderService(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
+        public async Task CreateAsync(SliderCeateVM vm)
+        {
+            string uniqueFileName = await vm.Image.FileUploadAsync(_FolderPath);
+            Slider slider = new();
+            {
+             
+            }
+        }
         public async Task DeleteAsync(int id)
         {
-            var SilderService = await _context.SilderService.FindAsync(id);
-            if (SilderService == null) return; 
-            _context.SilderService.Remove(SilderService);
+            var slider = await _context.Sliders.FindAsync(id);
+            if (slider == null) return; 
+            _context.Sliders.Remove(slider);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<SliderGetVM>> GetAllAsync()
+        {
+            return await _context.Sliders.Select(p => new SliderGetVM()
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Description = p.Description
+                
+            }).ToListAsync();
             
         }
 
-        public Task<List<SliderGetVM>> GetAllAsync()
+        public async Task GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
+            await _context.Sliders.FindAsync(id)
+            return;
         }
 
         public Task Update(int id)
