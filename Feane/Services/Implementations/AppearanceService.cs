@@ -54,20 +54,25 @@ namespace Feane.Services.Implementations
             }).ToListAsync();
         }
 
-        public async Task GetByIdAsync(int id)
+        public async Task<AppaeareanceUpdateVM> GetByIdAsync(int id)
         {
-            await _context.Appeareances.FindAsync (id);
-            return;
-        }
+           var product = await _context.Appeareances.FindAsync (id);
+            if (product is null) return null;
+
+            return new AppaeareanceUpdateVM
+            {
+                Description = product.Description,
+                Id = product.Id,
+                Title = product.Title,
+
+            };
 
         public Task Update(AppaeareanceUpdateVM vm)
         {
-            throw new NotImplementedException();
+            var product = _context
+            
         }
 
-        public Task Update(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

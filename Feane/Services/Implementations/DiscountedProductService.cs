@@ -52,21 +52,41 @@ namespace Feane.Services.Implementations
             }).ToListAsync();
         }
 
-        public async Task GetByIdAsync(int id)
+        public async Task<DiscountedProductUpdateVM> GetByIdAsync(int id)
         {
-            await _context.DiscountedProducts.FindAsync(id);
-            return;
+            var product = await _context.DiscountedProducts.FindAsync(id);
+            if(product == null) return null;
+
+            return new DiscountedProductUpdateVM
+            {
+                Id= product.Id,
+                Name = product.Name,
+                Percentage = product.Percentage
+
+            };
         }
 
-        public Task Update(DiscountedProductUpdateVM vm)
+        public async Task Update(DiscountedProductUpdateVM vm)
         {
-            throw new NotImplementedException();
+            var product = await _context.DiscountedProducts.FindAsync(vm.Id);
+            if (product is null) return;
+
+            if (vm.Image != null)
+            {
+                string newImage = await vm.Image.FileUploadAsync(_FolderPath);
+                string oldImage = Path.Combine(_FolderPath, product.ImageName);
+                ExtensionMethod.DeleteFile(oldImage);        
+                product.ImageName = newImage;
+                product.Name = vm.Name;
+                product.Percentage = vm.Percentage;
+
+                _context. DiscountedProducts.Update(product);
+                await _context.SaveChangesAsync();
+            
+
         }
 
-        public Task Update(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
 
        
     }

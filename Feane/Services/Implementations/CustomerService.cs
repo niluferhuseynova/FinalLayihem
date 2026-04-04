@@ -20,14 +20,13 @@ namespace Feane.Services.Implementations
             _FolderPath = Path.Combine(_env.WebRootPath, "images");
         }
 
-        Task ICustomersService.CreateAsync(CustomersCreateVM vm)
+        public async Task CreateAsync(CustomersCreateVM vm)
         {
             string uniqueFileName = await vm.ImageName.FileUploadAsync(_folderPath);
             Customers customers = new()
             {
                 Comment = vm.Comment,
                 ImageName = uniqueFileName,
-                ImageUrl = uniqueFileName,
                 Name = uniqueFileName
             };
             await _context.Customers.AddAsync(customers);

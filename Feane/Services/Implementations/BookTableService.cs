@@ -1,4 +1,5 @@
 ﻿using Feane.Context;
+using Feane.Models;
 using Feane.Services.Interfaces;
 using Feane.ViewModels.BookTable;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +15,11 @@ namespace Feane.Services.Implementations
             _context = context;
         }
 
-        public Task CreateAsync(BookTableCreateVM vm)
+        public async Task CreateAsync(BookTableCreateVM vm)
         {
-            throw new NotImplementedException();
+            string uniqueFileName = await vm.ImageName.FileUploadAsync(_folderPath);
+            BookTable bookTable = new();      
+
         }
 
         public async Task DeleteAsync(int id)

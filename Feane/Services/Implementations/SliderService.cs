@@ -3,6 +3,7 @@ using Feane.Models;
 using Feane.Services.Interfaces;
 using Feane.ViewModels.SliderProduct;
 using Microsoft.EntityFrameworkCore;
+using System.Xml.Linq;
 
 namespace Feane.Services.Implementations
 {
@@ -17,10 +18,11 @@ namespace Feane.Services.Implementations
 
         public async Task CreateAsync(SliderCeateVM vm)
         {
-            string uniqueFileName = await vm.Image.FileUploadAsync(_FolderPath);
+            string uniqueFileName = await vm.Name.FileUploadAsync(_FolderPath);
             Slider slider = new();
             {
-             
+                Name = p.Name,
+                Description = p.Description
             }
         }
         public async Task DeleteAsync(int id)

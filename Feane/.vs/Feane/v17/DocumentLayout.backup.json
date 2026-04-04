@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\appearanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\appearanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\booktableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\booktableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\discountedproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,16 +23,8 @@
       "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\dishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\appearanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\appearanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\booktableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\booktableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\services\\implementations\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|solutionrelative:services\\implementations\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{207E1198-D014-4501-8B3F-9B9B461A375A}|Feane.csproj|c:\\users\\azedunet\\desktop\\ilkproyekt\\feane\\models\\appeareance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -106,17 +106,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\CustomerService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\CustomerService.cs",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\CustomerService.cs",
+              "RelativeToolTip": "Services\\Implementations\\CustomerService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwDoAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T20:24:06.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BookTableService.cs",
+              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\BookTableService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\BookTableService.cs",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\BookTableService.cs",
+              "RelativeToolTip": "Services\\Implementations\\BookTableService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA1wC0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T20:19:54.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppearanceService.cs",
+              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\AppearanceService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\AppearanceService.cs",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\AppearanceService.cs",
+              "RelativeToolTip": "Services\\Implementations\\AppearanceService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAlwDsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T16:42:33.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DiscountedProductService.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DiscountedProductService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\DiscountedProductService.cs",
               "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DiscountedProductService.cs",
               "RelativeToolTip": "Services\\Implementations\\DiscountedProductService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwDkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-19T16:00:20.904Z",
               "EditorCaption": ""
@@ -124,14 +163,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AppearanceService.cs",
-              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\AppearanceService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\AppearanceService.cs",
-              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\AppearanceService.cs",
-              "RelativeToolTip": "Services\\Implementations\\AppearanceService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAawA4AAAAgAAAAAAAAAA==",
+              "Title": "DishService.cs",
+              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DishService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\DishService.cs",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DishService.cs",
+              "RelativeToolTip": "Services\\Implementations\\DishService.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T16:42:33.217Z",
+              "WhenOpened": "2026-03-18T21:20:16.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SliderService.cs",
+              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\SliderService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\SliderService.cs",
+              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\SliderService.cs",
+              "RelativeToolTip": "Services\\Implementations\\SliderService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowDAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T16:24:27.728Z",
               "EditorCaption": ""
             },
             {
@@ -144,8 +196,7 @@
               "RelativeToolTip": "Services\\Interfaces\\IAppearanceService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T17:08:12.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-19T17:08:12.535Z"
             },
             {
               "$type": "Document",
@@ -162,58 +213,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BookTableService.cs",
-              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\BookTableService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\BookTableService.cs",
-              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\BookTableService.cs",
-              "RelativeToolTip": "Services\\Implementations\\BookTableService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T20:19:54.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CustomerService.cs",
-              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\CustomerService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\CustomerService.cs",
-              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\CustomerService.cs",
-              "RelativeToolTip": "Services\\Implementations\\CustomerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T20:24:06.105Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DishService.cs",
-              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DishService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\DishService.cs",
-              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\DishService.cs",
-              "RelativeToolTip": "Services\\Implementations\\DishService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T21:20:16.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SliderService.cs",
-              "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\SliderService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\SliderService.cs",
-              "ToolTip": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Implementations\\SliderService.cs",
-              "RelativeToolTip": "Services\\Implementations\\SliderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T16:24:27.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
               "Title": "IDiscountedProductService.cs",
               "DocumentMoniker": "C:\\Users\\AzEduNet\\Desktop\\IlkProyekt\\Feane\\Services\\Interfaces\\IDiscountedProductService.cs",
@@ -222,8 +221,7 @@
               "RelativeToolTip": "Services\\Interfaces\\IDiscountedProductService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T21:00:12.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-18T21:00:12.794Z"
             },
             {
               "$type": "Document",
@@ -235,8 +233,7 @@
               "RelativeToolTip": "Services\\Interfaces\\IDishService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T21:19:16.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-18T21:19:16.691Z"
             },
             {
               "$type": "Document",
@@ -248,8 +245,7 @@
               "RelativeToolTip": "Models\\DiscountedProduct.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T15:20:28.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T15:20:28.857Z"
             },
             {
               "$type": "Document",
@@ -261,8 +257,7 @@
               "RelativeToolTip": "Context\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T17:04:49.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-14T17:04:49.059Z"
             },
             {
               "$type": "Document",
@@ -274,8 +269,7 @@
               "RelativeToolTip": "Helper\\ExtensionMethod.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T09:48:00.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T09:48:00.858Z"
             },
             {
               "$type": "Document",
@@ -287,8 +281,7 @@
               "RelativeToolTip": "Services\\Interfaces\\ISliderService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T16:24:58.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-19T16:24:58.148Z"
             },
             {
               "$type": "Document",
@@ -300,8 +293,7 @@
               "RelativeToolTip": "Services\\Interfaces\\ICustomersService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T20:25:21.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T20:25:21.47Z"
             },
             {
               "$type": "Document",
@@ -313,8 +305,7 @@
               "RelativeToolTip": "Services\\Interfaces\\IBookTableService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T08:35:16.164Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T08:35:16.164Z"
             },
             {
               "$type": "Document",
@@ -326,8 +317,7 @@
               "RelativeToolTip": "ViewModels\\DiscountedProduct\\DiscountedProductUpdateVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T14:46:33.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T14:46:33.569Z"
             },
             {
               "$type": "Document",
