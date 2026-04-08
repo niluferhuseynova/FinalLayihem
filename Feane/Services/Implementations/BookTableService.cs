@@ -43,20 +43,37 @@ namespace Feane.Services.Implementations
            }).ToListAsync();
         }
 
-        public async Task GetByIdAsync(int id)
+        public async Task <BookTableUpdateVM> GetByIdAsync()
         {
-            await _context.BookTables.FindAsync(id);
-            return;
+           var product = await _context.BookTables.FindAsync(id);
+            if (product is null) return null;
+
+            return new BookTableUpdateVM
+            {
+              Id = product.Id,
+              Date = DateTime.Now,
+              Name = product.Name,
+              Email = product.Email,
+              PersonNumber= product.PersonNumber,
+              PhoneNumber = product.PhoneNumber
+              
+            };
+           
         }
 
-        public Task Update(BookTableUpdateVM vm)
+        public async Task Update(BookTableUpdateVM vm)
         {
-            throw new NotImplementedException();
+            var product = await _context.BookTable.FindAsync(vm.Id);
+            if (product is null) return;
+
+            if(vm.Name is not null)
+            {
+                string.newImage = await vm.Image
+            }
+
+
         }
 
-        public Task Update(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

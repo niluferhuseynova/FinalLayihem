@@ -43,29 +43,46 @@ namespace Feane.Services.Implementations
 
         public async Task<List<CustomersGetVM>> GetAllAsync()
         {
-           return await _context.Customers.Select( p=> new CustomersGetVM()
-           {
-               Name = p.Name,
-               ImageName= p.ImageName,
-               Comment = p.Comment,
-               Id = p.Id
-           }).ToListAsync();
+            return await _context.Customers.Select(p => new CustomersGetVM()
+            {
+                Name = p.Name,
+                ImageName = p.ImageName,
+                Comment = p.Comment,
+                Id = p.Id
+            }).ToListAsync();
         }
 
-        public async Task GetByIdAsync(int id)
+        public async Task<CustomersUpdateVM> GetByIdAsync(int id)
         {
-            await _context.Customers.FindAsync( id );
-            return;
+            var product = await _context.Customers.FindAsync(id);
+            if (product is null) return null;
+
+            return new CustomersUpdateVM
+            {
+                Comment = product.Comment,
+                Id = product.Id,
+                Name = product.Name,
+            };
+
         }
 
-        public Task Update(CustomersUpdateVM vm)
+        public async Task Update(CustomersUpdateVM vm)
         {
-            throw new NotImplementedException();
-        }
+            var product = await _context.Customers.FindAsync(vm.Id);
+            if (product is null) return;
 
-        public Task Update(int id)
-        {
-            throw new NotImplementedException();
+            if (vm.Name != null)
+            {
+                string newImage = await vm.Image.FileUploadAsync(_FolderPath);
+                string oldImage = Path.Combine(_FolderPath, newImage);
+                ExtensionMethod.DeleteFile(oldImage);
+                product.ImageName = oldImage;
+
+            }
+            product.Name = vm.Name;
+            product.Comment = vm.Comment;
+
+            _context.Customers.Update(product);
+            await _context.SaveChangesAsync();
         }
-    }
-}
+    

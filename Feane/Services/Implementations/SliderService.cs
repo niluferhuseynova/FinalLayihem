@@ -1,4 +1,5 @@
 ﻿using Feane.Context;
+using Feane.Helper;
 using Feane.Models;
 using Feane.Services.Interfaces;
 using Feane.ViewModels.SliderProduct;
@@ -45,20 +46,39 @@ namespace Feane.Services.Implementations
             
         }
 
-        public async Task GetByIdAsync(int id)
+        public async Task<SliderUpdateVM> GetByIdAsync(int Id)
         {
-            await _context.Sliders.FindAsync(id)
-            return;
+           var product = await _context.Sliders.FindAsync(Id)
+            if (product is null) return null;
+
+            return new SliderUpdateVM()
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description
+            };
         }
 
-        public Task Update(int id)
+        public async Task Update(SliderUpdateVM vm)
         {
-            throw new NotImplementedException();
+            var product = await _context.Sliders.FindAsync(Id);
+            if (product is null) return;
+
+            if (vm.Image is not null)
+            {
+                string newImage =await vm.Image.FileUploadAsync(_folderPath);
+                string oldImage = Path.Combine(_folderPath, product.ImageName);
+                ExtensionMethod.DeleteFile(oldImage);
+                product.Image = newImage;
+            }
+            product.Name = vm.Name;
+            product.Description = vm.Description;
+
+            _context.Sliders.Update(product);
+            await _context.SaveChangesAsync();
+
         }
 
-        public Task Update(SliderUpdateVM vm)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Feane.Context;
+using Feane.Helper;
 using Feane.Models;
 using Feane.Services.Interfaces;
 using Feane.ViewModels.Dish.Product;
@@ -57,14 +58,27 @@ namespace Feane.Services.Implementations
             return;
         }
 
-        public Task Update(DishUpdateVM vm)
+        public async Task Update(DishUpdateVM vm)
         {
-            throw new NotImplementedException();
+            var product = await _context.Dishes.FindAsync(vm.Id);
+            if (product == null) return;
+
+            if (vm.Name != null)
+
+            {
+                string newImage = await vm.Image.FileUploadAsync(_FolderPath);
+                string oldImage = Path.Combine(_FolderPath, product.ImageName);
+                ExtensionMethod.DeleteFile(oldImage);
+                product.ImageName = newImage;
+            }
+
+            product.Name = vm.Name;
+            product.DishPrice = vm.DishPrice;
+
+            _context.Dishes.Update(product);
+            await _context.SaveChangesAsync();
         }
 
-        public Task Update(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

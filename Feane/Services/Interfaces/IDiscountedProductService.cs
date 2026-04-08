@@ -5,11 +5,10 @@ namespace Feane.Services.Interfaces
     public interface IDiscountedProductService
     {
         Task <List<DiscountedProductGetVM>>GetAllAsync();  
-        Task GetByIdAsync (int id);
+        Task <DiscountedProductUpdateVM>GetByIdAsync (int id);
         Task CreateAsync (DiscountedProductCreateVM vm);
         Task<DiscountedProductUpdateVM> GetByIdAsync(int id);
         Task DeleteAsync (int id);
-      
 
     }
 }
