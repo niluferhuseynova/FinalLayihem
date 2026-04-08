@@ -25,9 +25,9 @@ namespace Feane.Services.Implementations
             string uniqueFileName = await vm.Image.FileUploadAsync(_FolderPath);
             DiscountedProduct discountedProduct = new()
             {
-              Name = vm.Name,
-              Percentage = vm.Percentage,
-              ImageName = uniqueFileName 
+                Name = vm.Name,
+                Percentage = vm.Percentage,
+                ImageName = uniqueFileName
             };
             await _context.DiscountedProducts.AddAsync(discountedProduct);
             await _context.SaveChangesAsync();
@@ -35,7 +35,7 @@ namespace Feane.Services.Implementations
 
         public async Task DeleteAsync(int id)
         {
-            var discountedproduct=  await _context.DiscountedProducts.FindAsync(id);
+            var discountedproduct = await _context.DiscountedProducts.FindAsync(id);
             if (discountedproduct == null) return;
             _context.DiscountedProducts.Remove(discountedproduct);
             await _context.SaveChangesAsync();
@@ -43,11 +43,11 @@ namespace Feane.Services.Implementations
 
         public async Task<List<DiscountedProductGetVM>> GetAllAsync()
         {
-            return await _context.DiscountedProducts.Select(p => new DiscountedProductGetVM ()
+            return await _context.DiscountedProducts.Select(p => new DiscountedProductGetVM()
             {
                 Id = p.Id,
                 Name = p.Name,
-                ImageName= p.ImageName,
+                ImageName = p.ImageName,
                 Percentage = p.Percentage
             }).ToListAsync();
         }
@@ -55,11 +55,11 @@ namespace Feane.Services.Implementations
         public async Task<DiscountedProductUpdateVM> GetByIdAsync(int id)
         {
             var product = await _context.DiscountedProducts.FindAsync(id);
-            if(product == null) return null;
+            if (product == null) return null;
 
             return new DiscountedProductUpdateVM
             {
-                Id= product.Id,
+                Id = product.Id,
                 Name = product.Name,
                 Percentage = product.Percentage
 
@@ -75,19 +75,19 @@ namespace Feane.Services.Implementations
             {
                 string newImage = await vm.Image.FileUploadAsync(_FolderPath);
                 string oldImage = Path.Combine(_FolderPath, product.ImageName);
-                ExtensionMethod.DeleteFile(oldImage);        
+                ExtensionMethod.DeleteFile(oldImage);
                 product.ImageName = newImage;
-                product.Name = vm.Name;
-                product.Percentage = vm.Percentage;
 
-                _context. DiscountedProducts.Update(product);
-                await _context.SaveChangesAsync();
-            
+            }
+
+            product.Name = vm.Name;
+            product.Percentage = vm.Percentage;
+
+            _context.DiscountedProducts.Update(product);
+            await _context.SaveChangesAsync();
+
+
 
         }
-
-       
-
-       
     }
 }

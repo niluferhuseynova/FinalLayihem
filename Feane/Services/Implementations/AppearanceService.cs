@@ -69,20 +69,20 @@ namespace Feane.Services.Implementations
         }
         public async Task Update(AppaeareanceUpdateVM vm)
         {
-            var product = await _context.Appeareances.FindAsync(vm.Id);
-            if (product is null) return;
+            var appeareance = await _context.Appeareances.FindAsync(vm.Id);
+            if (appeareance is null) return;
 
             if(vm.ImageName is not null)
             {
                 string newImage = await vm.ImageName.FileUploadAsync(_folderPath);
-                string oldImage = Path.Combine(_folderPath, product.ImageName);
+                string oldImage = Path.Combine(_folderPath, appeareance.ImageName);
                 ExtensionMethod.DeleteFile(oldImage);
-                product.ImageName = newImage;
+                appeareance.ImageName = newImage;
             }
-            product.ImageName = vm.ImageName;
-            product.Percentage = vm.Percentage;
+             appeareance.Title = vm.Title;
+             appeareance.Description = vm.Description;
 
-            _context.DiscountedProducts.Update(product);
+            _context.Appeareances.Update(appeareance);
             await _context.SaveChangesAsync();
         }
 

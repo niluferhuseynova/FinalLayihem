@@ -17,16 +17,24 @@ namespace Feane.Services.Implementations
 
         public async Task CreateAsync(BookTableCreateVM vm)
         {
-            string uniqueFileName = await vm.ImageName.FileUploadAsync(_folderPath);
-            BookTable bookTable = new();      
+            BookTable bookTable = new()
+            {
+                Date = vm.Date,
+                Email = vm.Email,
+                Name = vm.Name,
+                PersonNumber = vm.PersonNumber,
+                PhoneNumber = vm.PhoneNumber
+            };
+            await _context.BookTables.AddAsync(bookTable);
+            await _context.SaveChangesAsync();
 
         }
 
         public async Task DeleteAsync(int id)
         {
-            var BookTable = await _context.BookTables.FindAsync(id);
-            if (BookTable == null) return;
-            _context.BookTables.Remove(BookTable);
+            var bookTable = await _context.BookTables.FindAsync(id);
+            if (bookTable == null) return;
+            _context.BookTables.Remove(bookTable);
             await _context.SaveChangesAsync();
         }
 
@@ -43,7 +51,7 @@ namespace Feane.Services.Implementations
            }).ToListAsync();
         }
 
-        public async Task <BookTableUpdateVM> GetByIdAsync()
+        public async Task <BookTableUpdateVM> GetByIdAsync(int id)
         {
            var product = await _context.BookTables.FindAsync(id);
             if (product is null) return null;
@@ -63,15 +71,19 @@ namespace Feane.Services.Implementations
 
         public async Task Update(BookTableUpdateVM vm)
         {
-            var product = await _context.BookTable.FindAsync(vm.Id);
-            if (product is null) return;
+            var bookTable = await _context.BookTables.FindAsync(vm.Id);
+            if (bookTable is null) return;
 
-            if(vm.Name is not null)
-            {
-                string.newImage = await vm.Image
-            }
+            bookTable.Name = vm.Name;
+            bookTable.Email = vm.Email;
+            bookTable.Date = vm.Date;
+            bookTable.PhoneNumber = vm.PhoneNumber;
+            bookTable.PersonNumber = vm.PersonNumber;
 
+            _context.BookTables.Update(bookTable);
+            await _context.SaveChangesAsync();
 
+           
         }
 
         

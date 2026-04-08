@@ -22,7 +22,7 @@ namespace Feane.Services.Implementations
 
         public async Task CreateAsync(CustomersCreateVM vm)
         {
-            string uniqueFileName = await vm.ImageName.FileUploadAsync(_folderPath);
+            string uniqueFileName = await vm.ImageName.FileUploadAsync(_FolderPath);
             Customers customers = new()
             {
                 Comment = vm.Comment,
@@ -31,12 +31,12 @@ namespace Feane.Services.Implementations
             };
             await _context.Customers.AddAsync(customers);
             await _context.SaveChangesAsync();
-
+        }
         public async Task DeleteAsync(int id)
         {
-            var customers = await _context.Customers.FindAsync(id);
-            if (customers == null) return;
-            _context.Customers.Remove(customers);
+            var customer = await _context.Customers.FindAsync(id);
+            if (customer == null) return;
+            _context.Customers.Remove(customer);
             await _context.SaveChangesAsync();
 
         }
@@ -71,9 +71,9 @@ namespace Feane.Services.Implementations
             var product = await _context.Customers.FindAsync(vm.Id);
             if (product is null) return;
 
-            if (vm.Name != null)
+            if (vm.ImageName != null)
             {
-                string newImage = await vm.Image.FileUploadAsync(_FolderPath);
+                string newImage = await vm.ImageName.FileUploadAsync(_FolderPath);
                 string oldImage = Path.Combine(_FolderPath, newImage);
                 ExtensionMethod.DeleteFile(oldImage);
                 product.ImageName = oldImage;
@@ -85,4 +85,6 @@ namespace Feane.Services.Implementations
             _context.Customers.Update(product);
             await _context.SaveChangesAsync();
         }
-    
+    }
+}
+        

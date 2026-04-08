@@ -19,12 +19,14 @@ namespace Feane.Services.Implementations
 
         public async Task CreateAsync(SliderCeateVM vm)
         {
-            string uniqueFileName = await vm.Name.FileUploadAsync(_FolderPath);
-            Slider slider = new();
+            Slider slider = new()
             {
-                Name = p.Name,
-                Description = p.Description
-            }
+                Name = vm.Name,
+                Description = vm.Description
+            };
+            await _context.Sliders.AddAsync(slider);
+            await _context.SaveChangesAsync();
+
         }
         public async Task DeleteAsync(int id)
         {
@@ -46,9 +48,9 @@ namespace Feane.Services.Implementations
             
         }
 
-        public async Task<SliderUpdateVM> GetByIdAsync(int Id)
+        public async Task<SliderUpdateVM> GetByIdAsync(int id)
         {
-           var product = await _context.Sliders.FindAsync(Id)
+            var product = await _context.Sliders.FindAsync(id);
             if (product is null) return null;
 
             return new SliderUpdateVM()
@@ -61,16 +63,9 @@ namespace Feane.Services.Implementations
 
         public async Task Update(SliderUpdateVM vm)
         {
-            var product = await _context.Sliders.FindAsync(Id);
+            var product = await _context.Sliders.FindAsync(vm.Id);
             if (product is null) return;
 
-            if (vm.Image is not null)
-            {
-                string newImage =await vm.Image.FileUploadAsync(_folderPath);
-                string oldImage = Path.Combine(_folderPath, product.ImageName);
-                ExtensionMethod.DeleteFile(oldImage);
-                product.Image = newImage;
-            }
             product.Name = vm.Name;
             product.Description = vm.Description;
 

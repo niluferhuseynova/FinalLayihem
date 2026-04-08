@@ -22,7 +22,7 @@ namespace Feane.Services.Implementations
 
          public async Task CreateAsync(DishCreateVM vm)
         {
-            string uniqueFileName = await vm.DishPrice.FileUploadAsync(_folderPath);
+            string uniqueFileName = await vm.Image.FileUploadAsync(_FolderPath);
              Dish dish = new()
             {
                 ImageName = uniqueFileName,
@@ -52,10 +52,17 @@ namespace Feane.Services.Implementations
            }).ToListAsync();
         }
 
-        public async Task GetByIdAsync(int id)
+        public async Task <DishUpdateVM> GetByIdAsync(int id)
         {
-            await _context.Dishes.FindAsync(id);
-            return;
+           var dish = await _context.Dishes.FindAsync(id);
+            if (dish is null) return null;
+            return new DishUpdateVM()
+            {
+                Id = dish.Id,
+                Name = dish.Name,
+                Description = dish.Description,
+                DishPrice = dish.DishPrice
+            };
         }
 
         public async Task Update(DishUpdateVM vm)
@@ -63,7 +70,7 @@ namespace Feane.Services.Implementations
             var product = await _context.Dishes.FindAsync(vm.Id);
             if (product == null) return;
 
-            if (vm.Name != null)
+            if (vm.Image!= null)
 
             {
                 string newImage = await vm.Image.FileUploadAsync(_FolderPath);
