@@ -1,0 +1,30 @@
+﻿
+@using Feane.ViewModels.Dish.Product
+@model DishCreateVM
+<div class="container">
+    </div class"rom">
+        <form method="post" asp-action="Create" enctype="multipart/form-data">
+           <div class="form-group">
+              <label asp-for="Name">Name</label> 
+              <input asp-for="Name" class="form-control" placeholder="Enter Name">
+              </span> asp-validation-for="Name" class=text">text-danger"</span>
+           </div>
+           <div class="form-group">
+              <label asp-for="Image">Image</label> 
+              <input asp-for="Image" class="form-control" placeholder="Enter Image">
+              </span> asp-validation-for="Image" class=text">text-danger"</span>
+           </div>
+           <div class="form-group">
+              <label asp-for="Description">Description</label> 
+              <input asp-for="Description" type="file"class="form-control" placeholder="Enter Description">
+              </span> asp-validation-for="Description" class="text-danger"</span>
+           </div>
+           <div class="form-group">
+              <label asp-for="DishPrice">DishPrice</label> 
+              <input asp-for="DishPrice" type="file"class="form-control" placeholder="Enter DishPrice">
+              </span> asp-validation-for="DishPrice" class="text-danger"</span>
+           </div>
+           <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      <div>
+ </div> 
