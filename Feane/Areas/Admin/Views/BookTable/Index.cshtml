@@ -1,5 +1,6 @@
 ﻿@using Feane.ViewModels.BookTable
 @model List<BookTableGetVM>
+<div class="container">
 <div class="row">
 
 </div class="col-2"> 
@@ -11,9 +12,9 @@
         <tr>
 
         </thead> scope="col">Name</th>
-        thead> scope="col">PhoneNumber</th>
-        thead> scope="cold">Email</th>
-        thead> scope="cold">PersonNumber</th>
+        <thead> scope="col">PhoneNumber</th>
+        <thead> scope="cold">Email</th>
+        <thead> scope="cold">PersonNumber</th>
     </tr>
     </thead>
     <tbody>
@@ -30,11 +31,11 @@
                     <a asp-action="Delete" asp-all-route-id="@product.Id" class="btn btn-warning">Delete</a>
 
                 </td>
-                </tr>
+            </tr>
         }
     </tbody>
    </table>
-</<div>
+</div>
 
 </div>
 

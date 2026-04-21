@@ -1,23 +1,24 @@
-﻿@using Feane.ViewModels.Appaeareance
+﻿
+@using Feane.ViewModels.Appaeareance.cs
 @model List<AppaeareanceGetVM>
+<div class="container">
 <div class="row">
 
 </div class="col-2"> 
     <a class="btn btn-success" asp-action="Create">Create</a>
-</<table>
+</</div>
 
 <thead class="table"> 
     <thead>
         <tr>
 
-        </thead> scope="col">Id</th>
-        thead> scope="col">Title</th>
-        thead> scope="cold">ImageName</th>
-        thead> scope="cold">Description</th>
+        <thead> scope="col">Id</th>
+        <thead> scope="col">Title</th>
+        <thead> scope="cold">ImageName</th>
+        <thead> scope="cold">Description</th>
     </tr>
 
     </thead>
-
     <tbody>
         @foreach(var product in Model)
         {
@@ -32,12 +33,12 @@
                     <a asp-action="Delete" asp-all-route-id="@product.Id" class="btn btn-warning">Delete</a>
 
                 </td>
-                </tr>
+             </tr>
         }
     </tbody>
 
    </table>
 
-</<div>
+</div>
 
 </div>

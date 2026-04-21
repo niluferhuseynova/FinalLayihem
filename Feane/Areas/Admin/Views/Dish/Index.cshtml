@@ -1,5 +1,7 @@
-﻿@using Feane.ViewModels.Dish
+﻿
+@using Feane.ViewModels.Dish.Product
 @model List<DishGetVM>
+<div class="container">
 <div class="row">
 
 </div class="col-2"> 
@@ -11,9 +13,9 @@
         <tr>
 
         </thead> scope="col">Name</th>
-        thead> scope="col">Image</th>
-        thead> scope="cold">Description</th>
-        thead> scope="cold">DishPrice</th>
+        <thead> scope="col">Image</th>
+        <thead> scope="cold">Description</th>
+        <thead> scope="cold">DishPrice</th>
     </tr>
     </thead>
     <tbody>
@@ -21,8 +23,8 @@
         {
             <tr>
                 <th scope="row">product.Name</th>th 
-                <td>@product.Image</td>
-                <td><img src="~/Description/"/>Description</td>
+                <td>@product.Description</td>
+                <td><img src="~/Image/"/>Image</td>
                 <td>@product.DishPrice</td>
 
                 <td>
@@ -34,7 +36,7 @@
         }
     </tbody>
    </table>
-</<div>
+</div>
 
 </div>
 

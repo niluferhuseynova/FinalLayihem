@@ -1,19 +1,20 @@
-﻿@using Feane.ViewModels.Customer
-@model List<CustomerGetVM>
+﻿@using Feane.ViewModels.Customers
+model List<CustomerGetVM>
+<div class="container">
 <div class="row">
 
 </div class="col-2"> 
     <a class="btn btn-success" asp-action="Create">Create</a>
-</<table>
+</div>
 
 <thead class="table"> 
     <thead>
         <tr>
 
-        </thead> scope="col">Id</th>
-        thead> scope="col">Name</th>
-        thead> scope="cold">ImageName</th>
-        thead> scope="cold">Comment</th>
+        <thead> scope="col">Id</th>
+        <thead> scope="col">Name</th>
+        <thead> scope="cold">ImageName</th>
+        <thead> scope="cold">Comment</th>
     </tr>
     </thead>
     <tbody>
@@ -30,11 +31,9 @@
                     <a asp-action="Delete" asp-all-route-id="@product.Id" class="btn btn-warning">Delete</a>
 
                 </td>
-                </tr>
+            </tr>
         }
     </tbody>
    </table>
-</<div>
-
 </div>
-
+</div>
