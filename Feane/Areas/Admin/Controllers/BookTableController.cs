@@ -1,4 +1,5 @@
 ﻿using Feane.Services.Implementations;
+using Feane.Services.Interfaces;
 using Feane.ViewModels.BookTable;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +9,11 @@ namespace Feane.Areas.Admin.Controllers
     [Area("Admin")]
     public class BookTableController : Controller
     {
-        private readonly BookTableService service;
+        private readonly IBookTableService _service;
 
-        public BookTableController(BookTableService service)
+        public BookTableController(IBookTableService service)
         {
-            this.service = service;
+            _service = service;
         }
 
         public IActionResult Index()
@@ -28,7 +29,7 @@ namespace Feane.Areas.Admin.Controllers
         public async Task<IActionResult> CreateAsync(BookTableCreateVM vm) //parametr list 
         {
 
-            await service.CreateAsync(vm);
+            await _service.CreateAsync(vm);
             return RedirectToAction(nameof(Index));
 
         }

@@ -1,5 +1,40 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using Feane.ViewModels.Dish
+@model List<DishGetVM>
+<div class="row">
+
+</div class="col-2"> 
+    <a class="btn btn-success" asp-action="Create">Create</a>
+</<table>
+
+<thead class="table"> 
+    <thead>
+        <tr>
+
+        </thead> scope="col">Name</th>
+        thead> scope="col">Image</th>
+        thead> scope="cold">Description</th>
+        thead> scope="cold">DishPrice</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var product in Model)
+        {
+            <tr>
+                <th scope="row">product.Name</th>th 
+                <td>@product.Image</td>
+                <td><img src="~/Description/"/>Description</td>
+                <td>@product.DishPrice</td>
+
+                <td>
+                    <a asp-action="Update" asp-all-route-id="@product.Id" class="btn btn-warning">Update</a>
+                    <a asp-action="Delete" asp-all-route-id="@product.Id" class="btn btn-warning">Delete</a>
+
+                </td>
+                </tr>
+        }
+    </tbody>
+   </table>
+</<div>
+
+</div>
+

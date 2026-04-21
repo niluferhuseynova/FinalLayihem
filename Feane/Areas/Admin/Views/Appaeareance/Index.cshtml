@@ -1,5 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using Feane.ViewModels.Appaeareance
+@model List<AppaeareanceGetVM>
+<div class="row">
+
+</div class="col-2"> 
+    <a class="btn btn-success" asp-action="Create">Create</a>
+</<table>
+
+<thead class="table"> 
+    <thead>
+        <tr>
+
+        </thead> scope="col">Id</th>
+        thead> scope="col">Title</th>
+        thead> scope="cold">ImageName</th>
+        thead> scope="cold">Description</th>
+    </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach(var product in Model)
+        {
+            <tr>
+                <th scope="row">product.Id</th>th 
+                <td>@product.Title</td>
+                <td><img src="~/imagesName/@product.ImageName"/></td>
+                <td>@product.Description</td>
+
+                <td>
+                    <a asp-action="Update" asp-all-route-id="@product.Id" class="btn btn-warning">Update</a>
+                    <a asp-action="Delete" asp-all-route-id="@product.Id" class="btn btn-warning">Delete</a>
+
+                </td>
+                </tr>
+        }
+    </tbody>
+
+   </table>
+
+</<div>
+
+</div>

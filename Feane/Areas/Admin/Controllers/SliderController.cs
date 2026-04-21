@@ -1,4 +1,5 @@
 ﻿using Feane.Services.Implementations;
+using Feane.Services.Interfaces;
 using Feane.ViewModels.SliderProduct;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,11 +8,11 @@ namespace Feane.Areas.Admin.Controllers
     [Area("Admin")]
     public class SliderController : Controller
     {
-        private readonly SliderService service;
+        private readonly ISliderService _service;
 
-        public SliderController(SliderService service)
+        public SliderController(ISliderService service)
         {
-            this.service = service;
+            _service = service;
         }
 
         public IActionResult Index()
@@ -28,7 +29,7 @@ namespace Feane.Areas.Admin.Controllers
 
         {
 
-            await service.CreateAsync(vm);
+            await _service.CreateAsync(vm);
             return RedirectToAction(nameof(Index));
         }
 

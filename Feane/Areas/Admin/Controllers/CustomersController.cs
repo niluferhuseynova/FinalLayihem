@@ -1,17 +1,17 @@
 ﻿using Feane.Helper;
 using Feane.Services.Interfaces;
-using Feane.ViewModels.DiscountedProduct;
+using Feane.ViewModels.Customers;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Feane.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class DiscountedProductService : Controller
-    {
-        private readonly IDiscountedProductService  _service;
 
-        public DiscountedProductService(IDiscountedProductService service)
+    [Area("Admin")]
+    public class CustomersController : Controller
+    {
+        private readonly ICustomersService _service;
+
+        public CustomersController(ICustomersService service)
         {
             _service = service;
         }
@@ -23,27 +23,26 @@ namespace Feane.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-          return View();
-
+            return View();
         }
-        [HttpGet]
-        public async Task<IActionResult> CreateAsync(DiscountedProductCreateVM vm) //parametr list
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync(CustomersCreateVM vm) // parametr list                                                                
         {
-           if(!ModelState.IsValid) 
+            if(!ModelState.IsValid) 
                 return View(vm);
-
-            if (!vm.Image.CheckSize(2))
+            if (!vm.ImageName.CheckSize(2))
             {
                 ModelState.AddModelError("Image", "seklin olcusu 2mb-dan cox ola bilmez");
                 return View(vm);
             }
-            if (!vm.Image.CheckType("Image"))
+            if (!vm.ImageName.CheckType("Image"))
             {
                 ModelState.AddModelError("Image", "Zehmet olmasa image data yukleyin");
                 return View(vm);
             }
             await _service.CreateAsync(vm);
             return RedirectToAction(nameof(Index));
-        }
+           
+        }                                                                
     }
 }

@@ -1,4 +1,7 @@
-﻿using Feane.Services.Implementations;
+﻿using Feane.Helper;
+using Feane.Services.Implementations;
+using Feane.Services.Interfaces;
+using Feane.ViewModels.Dish.Product;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Feane.Areas.Admin.Controllers
@@ -6,12 +9,13 @@ namespace Feane.Areas.Admin.Controllers
     [Area("Admin")]
     public class DishController : Controller
     {
-        private readonly DishService service;
+        private readonly IDishService _service;
 
-        public DishController(DishService service)
+        public DishController(IDishService service)
         {
-            this.service = service;
+            _service = service;
         }
+
         [HttpGet]
 
         public IActionResult Index()
@@ -19,24 +23,23 @@ namespace Feane.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateAsync(DishCreateVN vm) //parametr list 
+        public async Task<IActionResult> CreateAsync(DishCreateVM vm) //parametr list 
         {
             if(!ModelState.IsValid) 
                 return View(vm);
-            if(vm.Image.CheckSize(2))
+
+            if (!vm.Image.CheckSize(2))
             {
                 ModelState.AddModelError("Image", "seklin olcusu 2mb-dan cox ola bilmez");
-                return View();
-                
-                    if (!vm.Images.CheckType("Image"))
-                
-                {
-                    ModelState.AddModelError("Image", "Zehmet olmasa image tipli data ywkleyin");
-                    return View();
-                }
-                await service.CreateAsync(vm);
-                return RedirectToAction(nameof(Index));
+                return View(vm);
             }
+            if (!vm.Image.CheckType("Image"))
+            {
+                ModelState.AddModelError("Image", "Zehmet olmasa image data yukleyin");
+                return View(vm);
+            }
+            await _service.CreateAsync(vm);
+            return RedirectToAction(nameof(Index));
         }
 
 
