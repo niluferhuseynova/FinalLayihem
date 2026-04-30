@@ -1,20 +1,19 @@
-﻿
-@using Feane.ViewModels.Slider.Product
-@model SliderCreateVM
+﻿@using Feane.ViewModels.Slider
+@model SliderCeateVM
 <div class="container">
-    </div class"rom">
+    <div class="row">
         <form method="post" asp-action="Create" enctype="multipart/form-data">
            <div class="form-group">
               <label asp-for="Name">Name</label> 
               <input asp-for="Name" class="form-control" placeholder="Enter Name">
-              </span> asp-validation-for="Name" class=text">text-danger"</span>
+              <span asp-validation-for="Name" class=text-danger"></span>
            </div>
            <div class="form-group">
               <label asp-for="Description">Description</label> 
               <input asp-for="Description" type="file"class="form-control" placeholder="Enter Description">
-              </span> asp-validation-for="Description" class="text-danger"</span>
+              <span asp-validation-for="Description" class="text-danger"></span>
            </div>
            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-      <div>
+      </div>
  </div> 

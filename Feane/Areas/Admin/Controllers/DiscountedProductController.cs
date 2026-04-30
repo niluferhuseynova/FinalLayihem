@@ -16,10 +16,12 @@ namespace Feane.Areas.Admin.Controllers
             _service = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var product = await _service.GetAllAsync();
+            return View(product);
         }
+
         [HttpGet]
         public IActionResult Create()
         {

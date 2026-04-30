@@ -2,7 +2,7 @@
 using Feane.Helper;
 using Feane.Models;
 using Feane.Services.Interfaces;
-using Feane.ViewModels.SliderProduct;
+using Feane.ViewModels.Slider;
 using Microsoft.EntityFrameworkCore;
 using System.Xml.Linq;
 

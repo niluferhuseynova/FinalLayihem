@@ -7,7 +7,7 @@ namespace Feane.Services.Interfaces
         Task <List<DiscountedProductGetVM>>GetAllAsync();  
         Task <DiscountedProductUpdateVM>GetByIdAsync (int id);
         Task CreateAsync (DiscountedProductCreateVM vm);
-        Task<DiscountedProductUpdateVM> GetByIdAsync(int id);
+        Task Update(DiscountedProductUpdateVM vm);
         Task DeleteAsync (int id);
 
     }

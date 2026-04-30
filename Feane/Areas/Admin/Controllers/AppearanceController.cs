@@ -1,22 +1,27 @@
-﻿using Feane.Services.Implementations;
+﻿using Feane.Helper;
+using Feane.Services.Implementations;
+using Feane.Services.Interfaces;
+using Feane.ViewModels.Appaeareance;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Threading.Tasks;
 
 namespace Feane.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class AppearanceController : Controller
     {
-        private readonly AppearanceService service;
+        private readonly IAppearanceService _service;
 
-        public AppearanceController(AppearanceService service)
+        public AppearanceController(IAppearanceService service)
         {
-            this.service = service;
+            _service = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var product = await _service.GetAllAsync();
+            return View(product);
         }
         [HttpGet]
         public IActionResult Create()
@@ -24,24 +29,22 @@ namespace Feane.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateAsync(AppearanceCreateVM vm) //parametr list
+        public async Task<IActionResult> CreateAsync(AppaereanceCreateVM vm) //parametr list
         {
             if (!ModelState.IsValid)
                 return View(vm);
-            if (vm.Image.CheckSize(2))
+            if (!vm.ImageName.CheckSize(2))
             {
                 ModelState.AddModelError("Image", "seklin olcusu 2mb-dan cox ola bilmez");
                 return View();
-                {
-                    if (!vm.Image.CheckType("Image"))
-                    {
-                        ModelState.AddModelError("Image", "Zehmet olmasa image data yukleyin");
-                        return View(vm);
-                    }
-                    await service.CreateAsync(vm);
-                    return RedirectToAction(nameof(Index));
-                }
             }
+            if (!vm.ImageName.CheckType("Image"))
+            {
+                ModelState.AddModelError("Image", "Zehmet olmasa image data yukleyin");
+                return View(vm);
+            }
+            await _service.CreateAsync(vm);
+            return RedirectToAction(nameof(Index));
         }
 
     }

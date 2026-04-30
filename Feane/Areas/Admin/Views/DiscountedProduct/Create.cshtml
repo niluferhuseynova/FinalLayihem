@@ -1,25 +1,26 @@
 ﻿@using Feane.ViewModels.DiscountedProduct
 @model DiscountedProductCreateVM
 <div class="container">
-    </div class"rom">
+    <div class="row">
         <form method="post" asp-action="Create" enctype="multipart/form-data">
            <div class="form-group">
               <label asp-for="Name">Name</label> 
               <input asp-for="Name" class="form-control" placeholder="Enter Name">
-              </span> asp-validation-for="Name" class=text">text-danger"</span>
+              <span asp-validation-for="Name" class=text-danger"></span>
            </div>
            <div class="form-group">
               <label asp-for="Percentage">Percentage</label> 
               <input asp-for="Percentage" class="form-control" placeholder="Enter percentage">
-              </span> asp-validation-for="Percentage" class=text">text-danger"</span>
+                <span asp-validation-for="Percentage" class=text-danger"></span>
            </div>
            <div class="form-group">
               <label asp-for="Image">Image</label> 
               <input asp-for="Image" type="file"class="form-control" placeholder="Enter Image">
-              </span> asp-validation-for="Image" class="text-danger"</span>
+                <span asp-validation-for="Image" class=text-danger"></span>
+
            </div>
            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-      <div>
+      </div>
  </div> 
  

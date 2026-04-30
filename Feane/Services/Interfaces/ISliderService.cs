@@ -1,4 +1,4 @@
-﻿using Feane.ViewModels.SliderProduct;
+﻿using Feane.ViewModels.Slider;
 
 namespace Feane.Services.Interfaces
 {

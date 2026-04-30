@@ -1,4 +1,5 @@
 using Feane.Context;
+using Feane.Services.Implementations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Feane
@@ -16,7 +17,11 @@ namespace Feane
                 options.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
             });
 
+            builder.Services.AddScoped<IDiscounttedProductService, DiscountedProductService>();
             var app = builder.Build();
+
+            builder.Services.AddScoped<IAppearanceService, AppearanceService>();
+
             app.MapControllerRoute(
                   name: "areas",
                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"

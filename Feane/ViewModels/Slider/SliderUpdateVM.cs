@@ -1,7 +1,7 @@
-﻿using Feane.ViewModels.DiscountedProduct;
+﻿
 using System.ComponentModel.DataAnnotations;
 
-namespace Feane.ViewModels.SliderProduct
+namespace Feane.ViewModels.Slider
 {
     public class SliderUpdateVM
     {

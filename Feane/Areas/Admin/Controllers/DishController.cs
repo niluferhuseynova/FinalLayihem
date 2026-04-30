@@ -3,6 +3,7 @@ using Feane.Services.Implementations;
 using Feane.Services.Interfaces;
 using Feane.ViewModels.Dish.Product;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Feane.Areas.Admin.Controllers
 {
@@ -18,9 +19,10 @@ namespace Feane.Areas.Admin.Controllers
 
         [HttpGet]
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var product = await _service.GetAllAsync();
+            return View(product);
         }
         [HttpPost]
         public async Task<IActionResult> CreateAsync(DishCreateVM vm) //parametr list 

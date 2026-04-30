@@ -1,4 +1,4 @@
-﻿namespace Feane.ViewModels.Appaeareance.cs
+﻿namespace Feane.ViewModels.Appaeareance
 {
     public class AppaeareanceGetVM
     {   

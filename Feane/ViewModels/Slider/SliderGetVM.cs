@@ -1,4 +1,4 @@
-﻿namespace Feane.ViewModels.SliderProduct
+﻿namespace Feane.ViewModels.Slider
 {
     public class SliderGetVM
     {   

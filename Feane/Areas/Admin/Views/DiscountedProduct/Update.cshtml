@@ -1,0 +1,31 @@
+﻿@using Feane.ViewModels.DiscountedProduct
+@model DiscountedProductUpdateVM
+<div class="container">
+        <form method="post" asp-action="Update" enctype="multipart/form-data">
+             <div class="form-group">
+              <label asp-for="Id">Id</label>
+            <input asp-for="Id" class="form-control" placeholder="Enter Id">
+            </span> asp-validation-for="Id" class=text">text-danger"</span>
+           </div>
+           <div class="form-group">
+              <label asp-for="Name">Name</label> 
+              <input asp-for="Name" class="form-control" placeholder="Enter Name">
+              </span> asp-validation-for="Name" class=text">text-danger"</span>
+           </div>
+           <div class="form-group">
+              <label asp-for="Percentage">Percentage</label> 
+              <input asp-for="Percentage" class="form-control" placeholder="Enter percentage">
+              </span> asp-validation-for="Percentage" class=text">text-danger"</span>
+           </div>
+           <div class="form-group">
+              <label asp-for="Image">Image</label> 
+              <input asp-for="Image" type="file"class="form-control" placeholder="Enter Image">
+              </span> asp-validation-for="Image" class="text-danger"</span>
+           </div>
+           <button type="Update" class="btn btn-primary">Update</button>
+        </form>
+      <div>
+ </div> 
+ 
+
+ 

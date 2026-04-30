@@ -1,10 +1,8 @@
-﻿
-
-using Feane.Context;
+﻿using Feane.Context;
 using Feane.Helper;
 using Feane.Models;
 using Feane.Services.Interfaces;
-using Feane.ViewModels.Appaeareance.cs;
+using Feane.ViewModels.Appaeareance;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Packaging.Signing;
 
