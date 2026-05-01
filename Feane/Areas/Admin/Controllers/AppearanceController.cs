@@ -23,11 +23,13 @@ namespace Feane.Areas.Admin.Controllers
             var product = await _service.GetAllAsync();
             return View(product);
         }
+
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> CreateAsync(AppaereanceCreateVM vm) //parametr list
         {
@@ -44,6 +46,13 @@ namespace Feane.Areas.Admin.Controllers
                 return View(vm);
             }
             await _service.CreateAsync(vm);
+            return RedirectToAction(nameof(Index));
+
+          
+        }
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
 

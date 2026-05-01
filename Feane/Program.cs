@@ -1,5 +1,6 @@
 using Feane.Context;
 using Feane.Services.Implementations;
+using Feane.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Feane
@@ -17,10 +18,14 @@ namespace Feane
                 options.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
             });
 
-            builder.Services.AddScoped<IDiscounttedProductService, DiscountedProductService>();
+            builder.Services.AddScoped<IAppearanceService, AppearanceService>();
+            builder.Services.AddScoped<IBookTableService, BookTableService>();
+            builder.Services.AddScoped<CustomerService, CustomerService>();
+            builder.Services.AddScoped<IDiscountedProductService, DiscountedProductService>();
+            builder.Services.AddScoped<IDishService, DishService>();
+            builder.Services.AddScoped<SliderService, SliderService>();
             var app = builder.Build();
 
-            builder.Services.AddScoped<IAppearanceService, AppearanceService>();
 
             app.MapControllerRoute(
                   name: "areas",

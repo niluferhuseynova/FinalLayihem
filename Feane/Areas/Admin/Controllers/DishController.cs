@@ -27,7 +27,7 @@ namespace Feane.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAsync(DishCreateVM vm) //parametr list 
         {
-            if(!ModelState.IsValid) 
+            if (!ModelState.IsValid)
                 return View(vm);
 
             if (!vm.Image.CheckSize(2))
@@ -43,8 +43,11 @@ namespace Feane.Areas.Admin.Controllers
             await _service.CreateAsync(vm);
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
 
-
-
+        }
     }
 }

@@ -45,6 +45,14 @@ namespace Feane.Areas.Admin.Controllers
             await _service.CreateAsync(vm);
             return RedirectToAction(nameof(Index));
            
-        }                                                                
+        }        
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+
+        }
+
+
     }
 }
