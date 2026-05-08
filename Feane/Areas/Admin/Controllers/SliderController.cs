@@ -1,5 +1,6 @@
 ﻿using Feane.Services.Implementations;
 using Feane.Services.Interfaces;
+using Feane.ViewModels.Customers;
 using Feane.ViewModels.Slider;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -39,11 +40,19 @@ namespace Feane.Areas.Admin.Controllers
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
-
-
-
-
-
+        [HttpGet]
+        public async Task<IActionResult> Update(int id)
+        {
+            var Slider = await _service.GetByIdAsync(id);
+            SliderUpdateVM vm  = Slider;
+            if (Slider == null)
+                return NotFound();
+            return View(Slider);
+            
+                await _service.Update(vm);
+                return RedirectToAction(nameof(Index));
+            
+        } 
 
     }
 }

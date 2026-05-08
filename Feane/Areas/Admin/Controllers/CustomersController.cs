@@ -1,5 +1,6 @@
 ﻿using Feane.Helper;
 using Feane.Services.Interfaces;
+using Feane.ViewModels.Appaeareance;
 using Feane.ViewModels.Customers;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -52,7 +53,34 @@ namespace Feane.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+        [HttpGet]
+        public async Task<IActionResult> Update(int id)
+        {
+            var Customers = await _service.GetByIdAsync(id);
+            CustomersUpdateVM customers = Customers;
+            if (customers ==null)
+                return NotFound();
+            return View(Customers); 
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(CustomersUpdateVM vm)
+        {
 
+            if (!ModelState.IsValid)
+                return View(vm);
+            if (!vm.ImageName.CheckSize(2))
+            {
+                ModelState.AddModelError("Image", "seklin olcusu 2mb-dan cox ola bilmez");
+                return View(vm);
+            }
+            if (!vm.ImageName.CheckType("Image"))
+            {
+                ModelState.AddModelError("Image", "Zehmet olmasa image data yukleyin");
+                return View(vm);
+            }
+            await _service.Update(vm);
+            return RedirectToAction(nameof(Index));
+        }
 
     }
 }

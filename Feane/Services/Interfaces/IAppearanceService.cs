@@ -9,5 +9,6 @@ namespace Feane.Services.Interfaces
         Task CreateAsync (AppaereanceCreateVM vm);
         Task Update (AppaeareanceUpdateVM vm);
         Task DeleteAsync (int id);
+        Task GetByIdAsync(object id);
     }
 }
