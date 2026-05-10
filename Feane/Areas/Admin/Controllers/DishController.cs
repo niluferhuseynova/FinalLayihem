@@ -55,10 +55,11 @@ namespace Feane.Areas.Admin.Controllers
         public async Task<IActionResult> Update(int id)
         {
             var Dish = await _service.GetByIdAsync(id);
-            DishUpdateVM vm  = Dish;
+            DishUpdateVM vm = Dish;
             if (Dish == null)
                 return NotFound();
             return View(Dish);
+        }
             [HttpPost]
             public async Task<IActionResult> Update(DishUpdateVM vm)
             {
@@ -75,11 +76,10 @@ namespace Feane.Areas.Admin.Controllers
                     ModelState.AddModelError("Image", "Zehmet olmasa image data yukleyin");
                     return View(vm);
                 }
-            }
-
-            
             await _service.Update(vm);
             return RedirectToAction(nameof(Index));
+        }    
+            
         } 
     }
-}
+

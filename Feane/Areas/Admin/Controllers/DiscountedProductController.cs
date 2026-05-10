@@ -58,12 +58,12 @@ namespace Feane.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            var discountedProduct  = await _service.GetByIdAsync(id);
-            DiscountedProductUpdateVM vm  = discountedProduct;
-            if (discountedProduct== null)
+            var discountedProduct = await _service.GetByIdAsync(id);
+            DiscountedProductUpdateVM vm = discountedProduct;
+            if (discountedProduct == null)
                 return NotFound();
             return View(discountedProduct);
-
+        }
             [HttpPost]
             public  async Task<IActionResult> Update(DiscountedProductUpdateVM vm)
             {
@@ -80,11 +80,12 @@ namespace Feane.Areas.Admin.Controllers
                     ModelState.AddModelError("Image", "Zehmet olmasa image data yukleyin");
                     return View(vm);
                 }
-            }  
-            await _service.Update(vm);
-            return RedirectToAction(nameof(Index));
+                await _service.Update(vm);
+                return RedirectToAction(nameof(Index));
+
+            }
 
         }
 
     }   
-}
+
