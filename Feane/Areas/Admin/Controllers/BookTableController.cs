@@ -30,7 +30,7 @@ namespace Feane.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateAsync(BookTableCreateVM vm) //parametr list 
+        public async Task<IActionResult> CreateAsync(BookTableGetVM vm) //parametr list 
         {
 
             await _service.CreateAsync(vm);

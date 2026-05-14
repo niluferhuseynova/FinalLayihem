@@ -43,9 +43,9 @@ namespace Feane.Services.Implementations
             _context.Appeareances.Remove(appearance);
             await _context.SaveChangesAsync();
         }
-        public async Task<List<AppaeareanceGetVM>> GetAllAsync()
+        public async Task<List<AppeareanceGetVM>> GetAllAsync()
         {
-            return await _context.Appeareances.Select(p => new AppaeareanceGetVM ()
+            return await _context.Appeareances.Select(p => new AppeareanceGetVM ()
             {
                 Title = p.Title,
                 Description = p.Description,

@@ -1,6 +1,6 @@
 ﻿namespace Feane.ViewModels.Appaeareance
 {
-    public class AppaeareanceGetVM
+    public class AppeareanceGetVM
     {   
         public int Id { get; set; }
         public string Title { get; set; } 

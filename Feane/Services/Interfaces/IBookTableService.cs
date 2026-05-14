@@ -6,7 +6,7 @@ namespace Feane.Services.Interfaces
     {
         Task<List<BookTableGetVM>> GetAllAsync();
         Task<BookTableUpdateVM>GetByIdAsync(int id);
-        Task CreateAsync(BookTableCreateVM vm);
+        Task CreateAsync(BookTableGetVM vm);
         Task Update(BookTableUpdateVM vm);
         Task DeleteAsync(int id);
     }

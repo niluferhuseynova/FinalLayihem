@@ -2,7 +2,7 @@
 
 namespace Feane.ViewModels.BookTable
 {
-    public class BookTableCreateVM
+    public class BookTableGetVM
     {
         [Required]
         [MaxLength(50)]

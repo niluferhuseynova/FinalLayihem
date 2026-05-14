@@ -15,7 +15,7 @@ namespace Feane.Services.Implementations
             _context = context;
         }
 
-        public async Task CreateAsync(BookTableCreateVM vm)
+        public async Task CreateAsync(BookTableGetVM vm)
         {
             BookTable bookTable = new()
             {
